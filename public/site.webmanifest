@@ -1,0 +1,21 @@
+{
+  "name": "Portafolio de Gonzalo Villagra",
+
+  "short_name": "Gonzalo Villagra",
+
+  "start_url": "/",
+
+  "display": "standalone",
+
+  "background_color": "#080d19",
+
+  "theme_color": "#080d19",
+
+  "icons": [
+    {
+      "src": "/assets/images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

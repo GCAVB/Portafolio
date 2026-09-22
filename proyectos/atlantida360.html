@@ -1,0 +1,242 @@
+<!doctype html>
+
+<html lang="es">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1"
+>
+
+<title>
+Atlántida360 | Gonzalo Villagra - desarrollador web full stack
+</title>
+
+<meta
+  name="description"
+  content="Caso técnico del proyecto Atlántida360 desarrollado con Node.js, Express, JWT, PostgreSQL y Google Cloud Storage."
+>
+
+<link
+  rel="canonical"
+  href="https://gcavb.cl/proyectos/atlantida360"
+>
+
+</head>
+
+<body>
+
+<a
+  class="skip-link"
+  href="#contenido"
+>
+Saltar al contenido
+</a>
+
+<nav
+  class="navbar fixed-top site-nav"
+>
+
+<div class="container">
+
+<a
+  class="navbar-brand fw-bold"
+  href="/"
+>
+← Gonzalo Villagra 
+</a>
+
+</div>
+
+</nav>
+
+<main id="contenido">
+
+<header class="hero">
+
+<div class="container">
+
+<p class="eyebrow">
+Proyecto Principal
+</p>
+
+<h2>
+Atlántida360: cotización y envío de documentos para un negocio de impresiones
+</h2>
+
+<p class="hero-copy">
+
+Caso de estudio de una plataforma web en evolución que busca
+simplificar la consulta de servicios, el cálculo de cotizaciones
+y la recepción segura de documentos PDF.
+
+</p>
+
+<p>Frontend publicado  <strong>·</strong> 
+Cotizador funcional   <strong>·</strong>
+Nueva integración backend en desarrollo</p>
+
+</div>
+
+</header>
+
+<section class="section-space">
+
+<div class="container">
+
+<article
+  class="surface p-4 p-md-5"
+>
+
+<section class="project-details">
+
+  <h3>Contexto</h3>
+  <p>
+    Atlántida360 nace para apoyar la digitalización de un negocio real de
+    impresiones, fotocopias, digitalización y anillado en Estación Central.
+    El objetivo del sitio es permitir que los clientes conozcan los servicios
+    disponibles, estimen el valor de un trabajo y envíen la información
+    necesaria antes de acudir al local.
+  </p>
+
+  <p>
+    El sitio público presenta servicios, ubicación, medios de contacto y acceso
+    al cotizador online.
+  </p>
+
+  <h3>Problema</h3>
+  <p>
+    Cotizar documentos puede requerir conocer cuántas páginas contiene cada
+    archivo, cuántas copias necesita el cliente, si la impresión será por una
+    o ambas caras y si requiere anillado. Cuando existen varios archivos PDF,
+    este proceso puede generar errores o intercambios adicionales de mensajes.
+  </p>
+
+  <h3>Solución</h3>
+  <p>
+    Desarrollé una experiencia web que permite seleccionar uno o varios
+    documentos PDF, obtener automáticamente la cantidad de páginas mediante
+    PDF.js, calcular un valor estimado según las opciones seleccionadas y
+    preparar la información para su envío mediante un formulario.
+  </p>
+
+  <p>
+    La aplicación incorpora carga múltiple de archivos, arrastrar y soltar
+    (drag & drop), validación de documentos, detección de PDF ilegibles,
+    resumen de archivos seleccionados y control de errores antes del envío.
+  </p>
+
+  <h3>Frontend desarrollado</h3>
+
+  <ul>
+    <li>HTML semántico y estructura modular.</li>
+    <li>Diseño responsive con CSS.</li>
+    <li>Navegación optimizada para dispositivos móviles.</li>
+    <li>Tema claro y oscuro.</li>
+    <li>Cotizador basado en reglas de tarifas.</li>
+    <li>Carga múltiple de archivos y drag & drop.</li>
+    <li>Integración con PDF.js para lectura de páginas.</li>
+    <li>Mensajes accesibles mediante aria-live.</li>
+    <li>Barra de progreso usando XMLHttpRequest.</li>
+    <li>Metadatos SEO, Open Graph y JSON-LD.</li>
+    <li>robots.txt, sitemap.xml y rutas limpias con Vercel.</li>
+  </ul>
+
+  <h3>Arquitectura en desarrollo</h3>
+
+  <p>
+    Actualmente el proyecto se encuentra migrándose hacia una arquitectura con
+    API independiente desarrollada en Node.js y Express.
+  </p>
+
+  <p>
+    La solución contempla una ruta <code>POST /formularios</code> que recibirá
+    datos del formulario y documentos PDF mediante una única solicitud
+    multipart. Los archivos serán validados en el servidor, almacenados de
+    forma privada y sus metadatos persistidos en PostgreSQL.
+  </p>
+
+  <p>
+    El despliegue proyectado considera:
+  </p>
+
+  <ul>
+    <li>Frontend en Vercel.</li>
+    <li>API en Google Cloud Run.</li>
+    <li>Documentos privados en Google Cloud Storage.</li>
+    <li>Persistencia en PostgreSQL.</li>
+    <li>Notificaciones por correo electrónico.</li>
+  </ul>
+
+  <h3>Decisiones técnicas y aprendizajes</h3>
+
+  <ul>
+    <li>
+      <strong>PDF.js en el cliente:</strong> permite obtener páginas antes de
+      calcular una cotización.
+    </li>
+    <li>
+      <strong>Validación temprana:</strong> evita cotizaciones sobre archivos
+      ilegibles o corruptos.
+    </li>
+    <li>
+      <strong>Flujo multipart:</strong> simplifica la integración entre
+      frontend y backend.
+    </li>
+    <li>
+      <strong>Validación duplicada:</strong> el backend vuelve a verificar toda
+      la información recibida.
+    </li>
+    <li>
+      <strong>Almacenamiento privado:</strong> protege documentos que pueden
+      contener información sensible.
+    </li>
+    <li>
+      <strong>Estados de progreso:</strong> diferencian el envío del archivo y
+      el procesamiento de la solicitud.
+    </li>
+  </ul>
+
+  <h3>Próximamente</h3>
+
+  <ul>
+    <li>Migración definitiva a la nueva API.</li>
+    <li>Persistencia de formularios y documentos.</li>
+    <li>Catálogo de productos y cuadros fotográficos.</li>
+    <li>Registro e inicio de sesión de usuarios.</li>
+    <li>Área privada para consulta de documentos de estudio.</li>
+  </ul>
+</section>
+
+<div class="mt-4">
+
+<a
+  class="btn btn-accent"
+  href="https://www.atlantida360.cl/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+Ver Atlántida360
+</a>
+
+</div>
+
+</article>
+
+</div>
+
+</section>
+
+</main>
+
+<script
+  type="module"
+  src="/src/js/main.js"
+></script>
+
+</body>
+
+</html>
