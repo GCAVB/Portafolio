@@ -1,5 +1,5 @@
 const contactApiUrl = String(
-  import.meta.env.VITE_CONTACT_API_URL || ''
+  import.meta.env.CONTACT_API_URL || ''
 )
   .trim()
   .replace(/\/+$/, '');
