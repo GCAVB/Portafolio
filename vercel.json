@@ -5,6 +5,26 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
+
+  "rewrites": [
+    {
+      "source": "/go/github",
+      "destination": "/api/go/github"
+    },
+    {
+      "source": "/go/orderManagement",
+      "destination": "/api/go/orderManagement"
+    },
+    {
+      "source": "/go/atlantida360",
+      "destination": "/api/go/atlantida360"
+    },
+    {
+      "source": "/go/linkedin",
+      "destination": "/api/go/linkedin"
+    }
+  ],
+
   "headers": [
     {
       "source": "/assets/(.*)",
@@ -15,22 +35,6 @@
         }
       ]
     },
-    {
-  "source": "/go/github",
-  "destination": "/api/go/github"
-},
- {
-  "source": "/go/orderManagement",
-  "destination": "/api/go/orderManagement"
-},
-{
-  "source": "/go/atlantida360",
-  "destination": "/api/go/atlantida360"
-},
-{
-  "source": "/go/linkedin",
-  "destination": "/api/go/linkedin"
-},
     {
       "source": "/(.*)",
       "headers": [
