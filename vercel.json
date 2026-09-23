@@ -8,7 +8,7 @@
   "rewrites": [ { "source": "/go/github", "destination": "/go/github" },
     { "source": "/go/orderManagement", "destination": "/api/go/orderManagement" },
     { "source": "/go/atlantida360", "destination": "/api/go/atlantida360" },
-    { "source": "/go/linkedin", "destination": "go/linkedin" }],
+    { "source": "/go/linkedin", "destination": "https://portfolio-contact-api-git-543714078789.southamerica-west1.run.app/go/linkedin" }],
 
   "headers": [ { "source": "/assets/(.*)",
       "headers": [ { "key": "Cache-Control",
